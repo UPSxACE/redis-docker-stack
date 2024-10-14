@@ -14,7 +14,7 @@ services:
       - traefik.http.routers.redis.entrypoints=websecure
       - traefik.http.routers.redis.tls.certresolver=${CERTRESOLVER}
       - io.portainer.accesscontrol.public=true
-    command: ["redis-server", "--requirepass", "$$REDIS_PASSWORD"]
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD}"]
     volumes:
       - redis_data:/data
 
